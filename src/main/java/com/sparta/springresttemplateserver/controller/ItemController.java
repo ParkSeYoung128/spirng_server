@@ -16,7 +16,7 @@ public class ItemController {
         this.itemService = itemService;
     }
 
-    @GetMapping("/get-call-obj")
+    @GetMapping("/get-call-obj")    // Query Param (? 사용)
     public Item getCallObject(@RequestParam String query) {
         return itemService.getCallObject(query);
     }
@@ -26,7 +26,7 @@ public class ItemController {
         return itemService.getCallList();
     }
 
-    @PostMapping("/post-call/{query}")
+    @PostMapping("/post-call/{query}")  //Path Variable (경로에 직접 포함)
     public Item postCall(@PathVariable String query, @RequestBody UserRequestDto requestDto) {
         return itemService.postCall(query, requestDto);
     }
